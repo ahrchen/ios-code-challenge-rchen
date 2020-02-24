@@ -11,38 +11,40 @@ import XCTest
 
 class DentalDataPointTests: XCTestCase {
 
-    func testDecodingWhenMissingTimeStampItThrows() {
-        XCTAssertThrowsError(try JSONDecoder().decode(DentalDataPoint.self, from: dataPointMissingTimeStamp)) { error in
-            if case .keyNotFound(let key, _)? = error as? DecodingError {
-                XCTAssertEqual("t", key.stringValue)
-            } else {
-                XCTFail("Expected '.keyNotFound' but got \(error)")
-            }
-        }
+    func testDecodingWhenMissingTimeStampItThrows() throws{
+        AssertThrowsKeyNotFound("t", decoding: DentalDataPoint.self, from: try fixture.json(deletingKeyPaths: "t"))
     }
 
-    func testDecodingWhenMissingNumPeopleItThrows() {
-        XCTAssertThrowsError(try JSONDecoder().decode(DentalDataPoint.self, from: dataPointMissingNumPeople)) { error in
-            if case .keyNotFound(let key, _)? = error as? DecodingError {
-                XCTAssertEqual("y", key.stringValue)
-            } else {
-                XCTFail("Expected '.keyNotFound' but got \(error)")
-            }
-        }
+    func testDecodingWhenMissingNumPeopleItThrows() throws{
+        AssertThrowsKeyNotFound("y", decoding: DentalDataPoint.self, from: try fixture.json(deletingKeyPaths: "y"))
     }
 
-    let dataPointMissingTimeStamp = Data("""
+    let fixture = Data("""
     {
+        "t": 1579294990,
         "y": 1
     }
     """.utf8)
 
-    let dataPointMissingNumPeople = Data("""
-    {
-        "t": 1579294990,
+    func AssertThrowsKeyNotFound<T: Decodable>(_ expectedKey: String, decoding: T.Type, from data: Data, file: StaticString = #file, line: UInt = #line) {
+        XCTAssertThrowsError(try JSONDecoder().decode(decoding, from: data), file: file, line: line) { error in
+            if case .keyNotFound(let key, _)? = error as? DecodingError {
+                XCTAssertEqual(expectedKey, key.stringValue, "Expected missing key '\(key.stringValue)' to equal '\(expectedKey)'.", file: file, line: line)
+            } else {
+                XCTFail("Expected '.keyNotFound(\(expectedKey))' but got \(error)", file: file, line: line)
+            }
+        }
     }
-    """.utf8)
+}
 
+extension Data {
+    func json(deletingKeyPaths keyPaths: String...) throws -> Data {
+        let decoded = try JSONSerialization.jsonObject(with: self, options: .mutableContainers) as AnyObject
 
+        for keyPath in keyPaths {
+            decoded.setValue(nil, forKeyPath: keyPath)
+        }
 
+        return try JSONSerialization.data(withJSONObject: decoded)
+    }
 }
