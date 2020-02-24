@@ -19,7 +19,12 @@ class DentalDataPointTests: XCTestCase {
         AssertThrowsKeyNotFound("y", decoding: DentalDataPoint.self, from: try fixture.json(deletingKeyPaths: "y"))
     }
 
-    let fixture = Data("""
+    func testDecodingWhenGoodDataReturnDataPoint() throws {
+        let result = try JSONDecoder().decode(DentalDataPoint.self, from: fixture)
+        XCTAssertEqual(DentalDataPoint(Date(timeIntervalSince1970: 1579294990), 1), result)
+    }
+
+    private let fixture = Data("""
     {
         "t": 1579294990,
         "y": 1

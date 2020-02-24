@@ -8,14 +8,20 @@
 
 import Foundation
 
-struct DentalDataPoint: Decodable {
+struct DentalDataPoint: Decodable, Equatable {
     var time: Date
     var numberOfPeopleBrushingTeeth: Int
+
+    init(_ time: Date, _ numberOfPeopleBrushingTeeth: Int){
+        self.time = time
+        self.numberOfPeopleBrushingTeeth = numberOfPeopleBrushingTeeth
+    }
 
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
 
-        time = try container.decode(Date.self, forKey: .t)
+        let timeInt = try container.decode(Double.self, forKey: .t)
+        time = Date(timeIntervalSince1970: timeInt)
         numberOfPeopleBrushingTeeth = try container.decode(Int.self, forKey: .y)
     }
 
