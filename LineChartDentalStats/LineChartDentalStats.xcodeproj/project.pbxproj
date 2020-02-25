@@ -3,10 +3,16 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		17458F11A375332961384CF1 /* Pods_LineChartDentalStatsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FB750CCC6C6DB978D8644C3 /* Pods_LineChartDentalStatsTests.framework */; };
+		33E2B5D8115118233AB07070 /* Pods_LineChartDentalStats.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BDEB38B020808E58FB5BB35 /* Pods_LineChartDentalStats.framework */; };
+		EE919D392404552D00176E32 /* APIRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE919D382404552D00176E32 /* APIRepository.swift */; };
+		EE919D3D24049D9C00176E32 /* OHHTTPTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE919D3C24049D9C00176E32 /* OHHTTPTest.swift */; };
+		EE919D3F2404B04E00176E32 /* DentalDataPoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE919D3E2404B04E00176E32 /* DentalDataPoints.swift */; };
+		EE919D412404B2A900176E32 /* 1.json in Resources */ = {isa = PBXBuildFile; fileRef = EE919D402404B2A900176E32 /* 1.json */; };
 		EECB49FC24038867007326E4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EECB49FB24038867007326E4 /* AppDelegate.swift */; };
 		EECB49FE24038867007326E4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EECB49FD24038867007326E4 /* SceneDelegate.swift */; };
 		EECB4A0024038867007326E4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EECB49FF24038867007326E4 /* ViewController.swift */; };
@@ -29,6 +35,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0BDEB38B020808E58FB5BB35 /* Pods_LineChartDentalStats.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LineChartDentalStats.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		84584069BA813F26BC04F749 /* Pods-LineChartDentalStatsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LineChartDentalStatsTests.release.xcconfig"; path = "Target Support Files/Pods-LineChartDentalStatsTests/Pods-LineChartDentalStatsTests.release.xcconfig"; sourceTree = "<group>"; };
+		8FB750CCC6C6DB978D8644C3 /* Pods_LineChartDentalStatsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LineChartDentalStatsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AAEC47B1300F9DD028DFFE64 /* Pods-LineChartDentalStatsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LineChartDentalStatsTests.debug.xcconfig"; path = "Target Support Files/Pods-LineChartDentalStatsTests/Pods-LineChartDentalStatsTests.debug.xcconfig"; sourceTree = "<group>"; };
+		B481AB021420343B2590F0FD /* Pods-LineChartDentalStats.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LineChartDentalStats.debug.xcconfig"; path = "Target Support Files/Pods-LineChartDentalStats/Pods-LineChartDentalStats.debug.xcconfig"; sourceTree = "<group>"; };
+		D0BD00092AD8AF5AA9F2E470 /* Pods-LineChartDentalStats.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LineChartDentalStats.release.xcconfig"; path = "Target Support Files/Pods-LineChartDentalStats/Pods-LineChartDentalStats.release.xcconfig"; sourceTree = "<group>"; };
+		EE919D382404552D00176E32 /* APIRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRepository.swift; sourceTree = "<group>"; };
+		EE919D3C24049D9C00176E32 /* OHHTTPTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OHHTTPTest.swift; sourceTree = "<group>"; };
+		EE919D3E2404B04E00176E32 /* DentalDataPoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DentalDataPoints.swift; sourceTree = "<group>"; };
+		EE919D402404B2A900176E32 /* 1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = 1.json; path = ../../api/1.json; sourceTree = "<group>"; };
 		EECB49F824038867007326E4 /* LineChartDentalStats.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LineChartDentalStats.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EECB49FB24038867007326E4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EECB49FD24038867007326E4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -49,6 +65,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				33E2B5D8115118233AB07070 /* Pods_LineChartDentalStats.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,18 +73,30 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				17458F11A375332961384CF1 /* Pods_LineChartDentalStatsTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E05F8D69BFC266718131C145 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0BDEB38B020808E58FB5BB35 /* Pods_LineChartDentalStats.framework */,
+				8FB750CCC6C6DB978D8644C3 /* Pods_LineChartDentalStatsTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		EECB49EF24038867007326E4 = {
 			isa = PBXGroup;
 			children = (
 				EECB49FA24038867007326E4 /* LineChartDentalStats */,
 				EECB4A1824039026007326E4 /* LineChartDentalStatsTests */,
 				EECB49F924038867007326E4 /* Products */,
+				FA7CC7E2B9464267C392814F /* Pods */,
+				E05F8D69BFC266718131C145 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -83,7 +112,9 @@
 		EECB49FA24038867007326E4 /* LineChartDentalStats */ = {
 			isa = PBXGroup;
 			children = (
+				EE919D382404552D00176E32 /* APIRepository.swift */,
 				EECB4A0F240389B4007326E4 /* DentalDataPoint.swift */,
+				EE919D3E2404B04E00176E32 /* DentalDataPoints.swift */,
 				EECB49FB24038867007326E4 /* AppDelegate.swift */,
 				EECB49FD24038867007326E4 /* SceneDelegate.swift */,
 				EECB49FF24038867007326E4 /* ViewController.swift */,
@@ -98,11 +129,24 @@
 		EECB4A1824039026007326E4 /* LineChartDentalStatsTests */ = {
 			isa = PBXGroup;
 			children = (
+				EE919D402404B2A900176E32 /* 1.json */,
 				EECB4A1124038FBC007326E4 /* DentalDataPointTests.swift */,
 				EECB4A1924039026007326E4 /* LineChartDentalStatsTests.swift */,
+				EE919D3C24049D9C00176E32 /* OHHTTPTest.swift */,
 				EECB4A1B24039026007326E4 /* Info.plist */,
 			);
 			path = LineChartDentalStatsTests;
+			sourceTree = "<group>";
+		};
+		FA7CC7E2B9464267C392814F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B481AB021420343B2590F0FD /* Pods-LineChartDentalStats.debug.xcconfig */,
+				D0BD00092AD8AF5AA9F2E470 /* Pods-LineChartDentalStats.release.xcconfig */,
+				AAEC47B1300F9DD028DFFE64 /* Pods-LineChartDentalStatsTests.debug.xcconfig */,
+				84584069BA813F26BC04F749 /* Pods-LineChartDentalStatsTests.release.xcconfig */,
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -112,9 +156,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = EECB4A0C2403886A007326E4 /* Build configuration list for PBXNativeTarget "LineChartDentalStats" */;
 			buildPhases = (
+				2BF7CE5CB5E3E368435180BD /* [CP] Check Pods Manifest.lock */,
 				EECB49F424038867007326E4 /* Sources */,
 				EECB49F524038867007326E4 /* Frameworks */,
 				EECB49F624038867007326E4 /* Resources */,
+				C6CC4D4A4F6067BE34E86116 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -129,9 +175,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = EECB4A1E24039026007326E4 /* Build configuration list for PBXNativeTarget "LineChartDentalStatsTests" */;
 			buildPhases = (
+				5C19A48C301C40C0637BCD32 /* [CP] Check Pods Manifest.lock */,
 				EECB4A1324039026007326E4 /* Sources */,
 				EECB4A1424039026007326E4 /* Frameworks */,
 				EECB4A1524039026007326E4 /* Resources */,
+				888F71D0D257641BB8397A01 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -196,10 +244,92 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EE919D412404B2A900176E32 /* 1.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2BF7CE5CB5E3E368435180BD /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-LineChartDentalStats-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5C19A48C301C40C0637BCD32 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-LineChartDentalStatsTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		888F71D0D257641BB8397A01 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-LineChartDentalStatsTests/Pods-LineChartDentalStatsTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-LineChartDentalStatsTests/Pods-LineChartDentalStatsTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-LineChartDentalStatsTests/Pods-LineChartDentalStatsTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C6CC4D4A4F6067BE34E86116 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-LineChartDentalStats/Pods-LineChartDentalStats-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-LineChartDentalStats/Pods-LineChartDentalStats-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-LineChartDentalStats/Pods-LineChartDentalStats-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		EECB49F424038867007326E4 /* Sources */ = {
@@ -209,6 +339,8 @@
 				EECB4A10240389B4007326E4 /* DentalDataPoint.swift in Sources */,
 				EECB4A0024038867007326E4 /* ViewController.swift in Sources */,
 				EECB49FC24038867007326E4 /* AppDelegate.swift in Sources */,
+				EE919D392404552D00176E32 /* APIRepository.swift in Sources */,
+				EE919D3F2404B04E00176E32 /* DentalDataPoints.swift in Sources */,
 				EECB49FE24038867007326E4 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -217,6 +349,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EE919D3D24049D9C00176E32 /* OHHTTPTest.swift in Sources */,
 				EECB4A2124039036007326E4 /* DentalDataPointTests.swift in Sources */,
 				EECB4A1A24039026007326E4 /* LineChartDentalStatsTests.swift in Sources */,
 			);
@@ -368,6 +501,7 @@
 		};
 		EECB4A0D2403886A007326E4 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B481AB021420343B2590F0FD /* Pods-LineChartDentalStats.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -386,6 +520,7 @@
 		};
 		EECB4A0E2403886A007326E4 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D0BD00092AD8AF5AA9F2E470 /* Pods-LineChartDentalStats.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -404,6 +539,7 @@
 		};
 		EECB4A1F24039026007326E4 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AAEC47B1300F9DD028DFFE64 /* Pods-LineChartDentalStatsTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
@@ -424,6 +560,7 @@
 		};
 		EECB4A2024039026007326E4 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 84584069BA813F26BC04F749 /* Pods-LineChartDentalStatsTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;

@@ -1,0 +1,6 @@
+framework module Pods_LineChartDentalStats {
+  umbrella header "Pods-LineChartDentalStats-umbrella.h"
+
+  export *
+  module * { export * }
+}

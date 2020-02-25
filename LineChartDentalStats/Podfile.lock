@@ -1,0 +1,39 @@
+PODS:
+  - Alamofire (5.0.2)
+  - OHHTTPStubs (9.0.0):
+    - OHHTTPStubs/Default (= 9.0.0)
+  - OHHTTPStubs/Core (9.0.0)
+  - OHHTTPStubs/Default (9.0.0):
+    - OHHTTPStubs/Core
+    - OHHTTPStubs/JSON
+    - OHHTTPStubs/NSURLSession
+    - OHHTTPStubs/OHPathHelpers
+  - OHHTTPStubs/JSON (9.0.0):
+    - OHHTTPStubs/Core
+  - OHHTTPStubs/NSURLSession (9.0.0):
+    - OHHTTPStubs/Core
+  - OHHTTPStubs/OHPathHelpers (9.0.0)
+  - OHHTTPStubs/Swift (9.0.0):
+    - OHHTTPStubs/Default
+  - SteviaLayout (4.5.0)
+
+DEPENDENCIES:
+  - Alamofire
+  - OHHTTPStubs
+  - OHHTTPStubs/Swift
+  - SteviaLayout (= 4.5.0)
+
+SPEC REPOS:
+  trunk:
+    - Alamofire
+    - OHHTTPStubs
+    - SteviaLayout
+
+SPEC CHECKSUMS:
+  Alamofire: 3ba7a4db18b4f62c4a1c0e1cb39d7f3d52e10ada
+  OHHTTPStubs: cb29d2a9d09a828ecb93349a2b0c64f99e0db89f
+  SteviaLayout: aa64a62810544348c9e328a6521cb9160fa82ec6
+
+PODFILE CHECKSUM: 2d7c8d9c881040f88406848355964eb970b0e3d5
+
+COCOAPODS: 1.8.4
