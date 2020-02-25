@@ -1,5 +1,8 @@
 PODS:
   - Alamofire (5.0.2)
+  - Charts (3.4.0):
+    - Charts/Core (= 3.4.0)
+  - Charts/Core (3.4.0)
   - OHHTTPStubs (9.0.0):
     - OHHTTPStubs/Default (= 9.0.0)
   - OHHTTPStubs/Core (9.0.0)
@@ -19,6 +22,7 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire
+  - Charts
   - OHHTTPStubs
   - OHHTTPStubs/Swift
   - SteviaLayout (= 4.5.0)
@@ -26,14 +30,16 @@ DEPENDENCIES:
 SPEC REPOS:
   trunk:
     - Alamofire
+    - Charts
     - OHHTTPStubs
     - SteviaLayout
 
 SPEC CHECKSUMS:
   Alamofire: 3ba7a4db18b4f62c4a1c0e1cb39d7f3d52e10ada
+  Charts: 74c9f256eaf0460c0c416522d1cf8c634ea6b286
   OHHTTPStubs: cb29d2a9d09a828ecb93349a2b0c64f99e0db89f
   SteviaLayout: aa64a62810544348c9e328a6521cb9160fa82ec6
 
-PODFILE CHECKSUM: 2d7c8d9c881040f88406848355964eb970b0e3d5
+PODFILE CHECKSUM: a798c41a2b770683a8885a255cdce3256714623b
 
 COCOAPODS: 1.8.4
