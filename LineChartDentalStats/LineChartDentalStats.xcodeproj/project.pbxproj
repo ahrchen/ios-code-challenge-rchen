@@ -9,10 +9,10 @@
 /* Begin PBXBuildFile section */
 		17458F11A375332961384CF1 /* Pods_LineChartDentalStatsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FB750CCC6C6DB978D8644C3 /* Pods_LineChartDentalStatsTests.framework */; };
 		33E2B5D8115118233AB07070 /* Pods_LineChartDentalStats.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BDEB38B020808E58FB5BB35 /* Pods_LineChartDentalStats.framework */; };
-		EE919D392404552D00176E32 /* APIRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE919D382404552D00176E32 /* APIRepository.swift */; };
 		EE919D3D24049D9C00176E32 /* OHHTTPTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE919D3C24049D9C00176E32 /* OHHTTPTest.swift */; };
 		EE919D3F2404B04E00176E32 /* DentalDataPoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE919D3E2404B04E00176E32 /* DentalDataPoints.swift */; };
 		EE919D412404B2A900176E32 /* 1.json in Resources */ = {isa = PBXBuildFile; fileRef = EE919D402404B2A900176E32 /* 1.json */; };
+		EE919D712405A88700176E32 /* LineChartDentalStatsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE919D702405A88700176E32 /* LineChartDentalStatsUITests.swift */; };
 		EECB49FC24038867007326E4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EECB49FB24038867007326E4 /* AppDelegate.swift */; };
 		EECB49FE24038867007326E4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EECB49FD24038867007326E4 /* SceneDelegate.swift */; };
 		EECB4A0024038867007326E4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EECB49FF24038867007326E4 /* ViewController.swift */; };
@@ -20,11 +20,17 @@
 		EECB4A052403886A007326E4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EECB4A042403886A007326E4 /* Assets.xcassets */; };
 		EECB4A082403886A007326E4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EECB4A062403886A007326E4 /* LaunchScreen.storyboard */; };
 		EECB4A10240389B4007326E4 /* DentalDataPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = EECB4A0F240389B4007326E4 /* DentalDataPoint.swift */; };
-		EECB4A1A24039026007326E4 /* LineChartDentalStatsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EECB4A1924039026007326E4 /* LineChartDentalStatsTests.swift */; };
 		EECB4A2124039036007326E4 /* DentalDataPointTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EECB4A1124038FBC007326E4 /* DentalDataPointTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		EE919D732405A88700176E32 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EECB49F024038867007326E4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EECB49F724038867007326E4;
+			remoteInfo = LineChartDentalStats;
+		};
 		EECB4A1C24039026007326E4 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = EECB49F024038867007326E4 /* Project object */;
@@ -41,10 +47,12 @@
 		AAEC47B1300F9DD028DFFE64 /* Pods-LineChartDentalStatsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LineChartDentalStatsTests.debug.xcconfig"; path = "Target Support Files/Pods-LineChartDentalStatsTests/Pods-LineChartDentalStatsTests.debug.xcconfig"; sourceTree = "<group>"; };
 		B481AB021420343B2590F0FD /* Pods-LineChartDentalStats.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LineChartDentalStats.debug.xcconfig"; path = "Target Support Files/Pods-LineChartDentalStats/Pods-LineChartDentalStats.debug.xcconfig"; sourceTree = "<group>"; };
 		D0BD00092AD8AF5AA9F2E470 /* Pods-LineChartDentalStats.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LineChartDentalStats.release.xcconfig"; path = "Target Support Files/Pods-LineChartDentalStats/Pods-LineChartDentalStats.release.xcconfig"; sourceTree = "<group>"; };
-		EE919D382404552D00176E32 /* APIRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRepository.swift; sourceTree = "<group>"; };
 		EE919D3C24049D9C00176E32 /* OHHTTPTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OHHTTPTest.swift; sourceTree = "<group>"; };
 		EE919D3E2404B04E00176E32 /* DentalDataPoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DentalDataPoints.swift; sourceTree = "<group>"; };
 		EE919D402404B2A900176E32 /* 1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = 1.json; path = ../../api/1.json; sourceTree = "<group>"; };
+		EE919D6E2405A88700176E32 /* LineChartDentalStatsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LineChartDentalStatsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		EE919D702405A88700176E32 /* LineChartDentalStatsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineChartDentalStatsUITests.swift; sourceTree = "<group>"; };
+		EE919D722405A88700176E32 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EECB49F824038867007326E4 /* LineChartDentalStats.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LineChartDentalStats.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EECB49FB24038867007326E4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EECB49FD24038867007326E4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -56,11 +64,17 @@
 		EECB4A0F240389B4007326E4 /* DentalDataPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DentalDataPoint.swift; sourceTree = "<group>"; };
 		EECB4A1124038FBC007326E4 /* DentalDataPointTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DentalDataPointTests.swift; sourceTree = "<group>"; };
 		EECB4A1724039026007326E4 /* LineChartDentalStatsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LineChartDentalStatsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		EECB4A1924039026007326E4 /* LineChartDentalStatsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineChartDentalStatsTests.swift; sourceTree = "<group>"; };
 		EECB4A1B24039026007326E4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		EE919D6B2405A88700176E32 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		EECB49F524038867007326E4 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -89,11 +103,21 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		EE919D6F2405A88700176E32 /* LineChartDentalStatsUITests */ = {
+			isa = PBXGroup;
+			children = (
+				EE919D702405A88700176E32 /* LineChartDentalStatsUITests.swift */,
+				EE919D722405A88700176E32 /* Info.plist */,
+			);
+			path = LineChartDentalStatsUITests;
+			sourceTree = "<group>";
+		};
 		EECB49EF24038867007326E4 = {
 			isa = PBXGroup;
 			children = (
 				EECB49FA24038867007326E4 /* LineChartDentalStats */,
 				EECB4A1824039026007326E4 /* LineChartDentalStatsTests */,
+				EE919D6F2405A88700176E32 /* LineChartDentalStatsUITests */,
 				EECB49F924038867007326E4 /* Products */,
 				FA7CC7E2B9464267C392814F /* Pods */,
 				E05F8D69BFC266718131C145 /* Frameworks */,
@@ -105,6 +129,7 @@
 			children = (
 				EECB49F824038867007326E4 /* LineChartDentalStats.app */,
 				EECB4A1724039026007326E4 /* LineChartDentalStatsTests.xctest */,
+				EE919D6E2405A88700176E32 /* LineChartDentalStatsUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -112,7 +137,6 @@
 		EECB49FA24038867007326E4 /* LineChartDentalStats */ = {
 			isa = PBXGroup;
 			children = (
-				EE919D382404552D00176E32 /* APIRepository.swift */,
 				EECB4A0F240389B4007326E4 /* DentalDataPoint.swift */,
 				EE919D3E2404B04E00176E32 /* DentalDataPoints.swift */,
 				EECB49FB24038867007326E4 /* AppDelegate.swift */,
@@ -131,7 +155,6 @@
 			children = (
 				EE919D402404B2A900176E32 /* 1.json */,
 				EECB4A1124038FBC007326E4 /* DentalDataPointTests.swift */,
-				EECB4A1924039026007326E4 /* LineChartDentalStatsTests.swift */,
 				EE919D3C24049D9C00176E32 /* OHHTTPTest.swift */,
 				EECB4A1B24039026007326E4 /* Info.plist */,
 			);
@@ -152,6 +175,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		EE919D6D2405A88700176E32 /* LineChartDentalStatsUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EE919D772405A88700176E32 /* Build configuration list for PBXNativeTarget "LineChartDentalStatsUITests" */;
+			buildPhases = (
+				EE919D6A2405A88700176E32 /* Sources */,
+				EE919D6B2405A88700176E32 /* Frameworks */,
+				EE919D6C2405A88700176E32 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EE919D742405A88700176E32 /* PBXTargetDependency */,
+			);
+			name = LineChartDentalStatsUITests;
+			productName = LineChartDentalStatsUITests;
+			productReference = EE919D6E2405A88700176E32 /* LineChartDentalStatsUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 		EECB49F724038867007326E4 /* LineChartDentalStats */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = EECB4A0C2403886A007326E4 /* Build configuration list for PBXNativeTarget "LineChartDentalStats" */;
@@ -201,6 +242,10 @@
 				LastUpgradeCheck = 1130;
 				ORGANIZATIONNAME = "Raymond Chen";
 				TargetAttributes = {
+					EE919D6D2405A88700176E32 = {
+						CreatedOnToolsVersion = 11.3.1;
+						TestTargetID = EECB49F724038867007326E4;
+					};
 					EECB49F724038867007326E4 = {
 						CreatedOnToolsVersion = 11.3.1;
 					};
@@ -225,11 +270,19 @@
 			targets = (
 				EECB49F724038867007326E4 /* LineChartDentalStats */,
 				EECB4A1624039026007326E4 /* LineChartDentalStatsTests */,
+				EE919D6D2405A88700176E32 /* LineChartDentalStatsUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		EE919D6C2405A88700176E32 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		EECB49F624038867007326E4 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -332,6 +385,14 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		EE919D6A2405A88700176E32 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EE919D712405A88700176E32 /* LineChartDentalStatsUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		EECB49F424038867007326E4 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -339,7 +400,6 @@
 				EECB4A10240389B4007326E4 /* DentalDataPoint.swift in Sources */,
 				EECB4A0024038867007326E4 /* ViewController.swift in Sources */,
 				EECB49FC24038867007326E4 /* AppDelegate.swift in Sources */,
-				EE919D392404552D00176E32 /* APIRepository.swift in Sources */,
 				EE919D3F2404B04E00176E32 /* DentalDataPoints.swift in Sources */,
 				EECB49FE24038867007326E4 /* SceneDelegate.swift in Sources */,
 			);
@@ -351,13 +411,17 @@
 			files = (
 				EE919D3D24049D9C00176E32 /* OHHTTPTest.swift in Sources */,
 				EECB4A2124039036007326E4 /* DentalDataPointTests.swift in Sources */,
-				EECB4A1A24039026007326E4 /* LineChartDentalStatsTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		EE919D742405A88700176E32 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EECB49F724038867007326E4 /* LineChartDentalStats */;
+			targetProxy = EE919D732405A88700176E32 /* PBXContainerItemProxy */;
+		};
 		EECB4A1D24039026007326E4 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = EECB49F724038867007326E4 /* LineChartDentalStats */;
@@ -385,6 +449,44 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		EE919D752405A88700176E32 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = RSCWF39P88;
+				INFOPLIST_FILE = LineChartDentalStatsUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = CCSF.LineChartDentalStatsUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = LineChartDentalStats;
+			};
+			name = Debug;
+		};
+		EE919D762405A88700176E32 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = RSCWF39P88;
+				INFOPLIST_FILE = LineChartDentalStatsUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = CCSF.LineChartDentalStatsUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = LineChartDentalStats;
+			};
+			name = Release;
+		};
 		EECB4A0A2403886A007326E4 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -582,6 +684,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		EE919D772405A88700176E32 /* Build configuration list for PBXNativeTarget "LineChartDentalStatsUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EE919D752405A88700176E32 /* Debug */,
+				EE919D762405A88700176E32 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		EECB49F324038867007326E4 /* Build configuration list for PBXProject "LineChartDentalStats" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
