@@ -19,7 +19,6 @@ struct DentalDataPoint: Decodable, Equatable {
 
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
-
         let timeInt = try container.decode(Double.self, forKey: .t)
         time = Date(timeIntervalSince1970: timeInt)
         numberOfPeopleBrushingTeeth = try container.decode(Int.self, forKey: .y)

@@ -13,6 +13,10 @@ import Alamofire
 
 class ViewController: UIViewController {
 
+    var page: Int = 1
+
+    var lineChartViewUpdated : Bool = false
+
     let prevButton: UIButton = {
         let button = UIButton()
         button.setTitle("Previous", for: .normal)
@@ -42,6 +46,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureView()
+        _ = configureLineChartView(page: page)
     }
 
     private func configureView() {
@@ -56,16 +61,42 @@ class ViewController: UIViewController {
                 prevButton,
                 nextButton)
         lineChartView.left(0).right(0).top(0)
-        lineChartView.Bottom == prevButton.Top - 50
+        lineChartView.Bottom == prevButton.Top 
         prevButton.bottom(0).left(0).height(100)
         nextButton.bottom(0).right(0).height(100)
         prevButton.Width == nextButton.Width
         prevButton.Right == nextButton.Left
     }
 
+    private func configureLineChartView(page: Int) {
+        guard let gitURL = URL(string: "https://raw.githubusercontent.com/rune-labs/ios-code-challenge-rchen/master/api/\(page).json") else { return }
+        AF.request(gitURL).validate().responseDecodable(of: Array<DentalDataPoint>.self) { (response) in
+            guard let dentalDataPoints = response.value else {
+                self.lineChartViewUpdated = false
+                return }
+            var lineChartEntries = [ChartDataEntry]()
+
+            for dentalDataPoint in dentalDataPoints {
+                let value = ChartDataEntry(x: Double(dentalDataPoint.time.timeIntervalSince1970), y: Double(dentalDataPoint.numberOfPeopleBrushingTeeth))
+                lineChartEntries.append(value)
+            }
+
+            let line = LineChartDataSet(entries: lineChartEntries)
+            line.colors = [NSUIColor.blue]
+            let data = LineChartData()
+            data.addDataSet(line)
+            self.lineChartView.data = data
+            self.page = page
+        }
+    }
+
+
     @objc func prevButtonPressed() {
+        guard page > 1 else { return }
+        configureLineChartView(page: page - 1)
     }
 
     @objc func nextButtonPressed() {
+        configureLineChartView(page: page + 1)
     }
 }
