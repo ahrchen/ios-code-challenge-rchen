@@ -8,6 +8,8 @@
 
 import UIKit
 import Stevia
+import Charts
+import Alamofire
 
 class ViewController: UIViewController {
 
@@ -31,6 +33,12 @@ class ViewController: UIViewController {
         return button
     }()
 
+    let lineChartView: LineChartView = {
+        let lineChartView = LineChartView()
+        lineChartView.accessibilityIdentifier = "Line Chart View"
+        return lineChartView
+    }()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         configureView()
@@ -44,8 +52,11 @@ class ViewController: UIViewController {
     }
 
     private func layoutView() {
-        view.sv(prevButton,
+        view.sv(lineChartView,
+                prevButton,
                 nextButton)
+        lineChartView.left(0).right(0).top(0)
+        lineChartView.Bottom == prevButton.Top - 50
         prevButton.bottom(0).left(0).height(100)
         nextButton.bottom(0).right(0).height(100)
         prevButton.Width == nextButton.Width

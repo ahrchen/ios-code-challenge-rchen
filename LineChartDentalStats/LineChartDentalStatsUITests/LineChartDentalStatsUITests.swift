@@ -20,7 +20,9 @@ class LineChartDentalStatsUITests: XCTestCase {
         let app = XCUIApplication()
         app.launch()
         let isDisplayingDentalStats = app.otherElements["Dental Statistics"].exists
+        let isChartViewDisplaying = app.otherElements["Line Chart View"].exists
         XCTAssert(isDisplayingDentalStats)
+        XCTAssert(isChartViewDisplaying)
         app.buttons["Previous Button"].tap()
         app.buttons["Next Button"].tap()
     }
