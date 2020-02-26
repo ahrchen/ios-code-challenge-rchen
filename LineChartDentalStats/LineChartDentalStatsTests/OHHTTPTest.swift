@@ -25,7 +25,9 @@ class OHHTTPTest: XCTestCase {
         guard let gitURL = URL(string: "https://raw.githubusercontent.com/rune-labs/ios-code-challenge-rchen/master/api/1.json") else { return }
         let promise = expectation(description: "Simple Request")
 
-        stub(condition: isPath("https://raw.githubusercontent.com/rune-labs/ios-code-challenge-rchen/master/api/1.json")) { request in
+        let urlString1 = "https://raw.githubusercontent.com/rune-labs/ios-code-challenge-rchen/master/api/1.json"
+
+        stub(condition: isPath(urlString1)) { request in
                     let stubPath = OHPathForFile("1.json", type(of: self))
                     return fixture(filePath: stubPath!, headers: ["Content-Type":"application/json"])
                 }

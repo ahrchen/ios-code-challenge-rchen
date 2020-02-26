@@ -7,6 +7,7 @@
 //
 
 import XCTest
+
 @testable import LineChartDentalStats
 
 class LineChartDentalStatsUITests: XCTestCase {
@@ -16,15 +17,19 @@ class LineChartDentalStatsUITests: XCTestCase {
         continueAfterFailure = false
     }
 
-    func testButtons() {
+    func testUI() {
         let app = XCUIApplication()
+        app.launchArguments = ["enable-testing"]
         app.launch()
-        let isDisplayingDentalStats = app.otherElements["Dental Statistics"].exists
-        let isChartViewDisplaying = app.otherElements["Line Chart View"].exists
+        let isDisplayingDentalStats = app.otherElements["Dental Statistics"].firstMatch.exists
+        let isChartViewDisplaying = app.otherElements["Line Chart View"].firstMatch.exists
+        let isPreviousButtonDisplaying = app.buttons["Previous Button"].firstMatch.exists
+        let isNextButtonDisplaying = app.buttons["Next Button"].firstMatch.exists
         XCTAssert(isDisplayingDentalStats)
         XCTAssert(isChartViewDisplaying)
-        app.buttons["Previous Button"].tap()
-        app.buttons["Next Button"].tap()
+        XCTAssert(isPreviousButtonDisplaying)
+        XCTAssert(isNextButtonDisplaying)
+        app.terminate()
     }
 
 }
