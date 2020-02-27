@@ -21,8 +21,9 @@ class APIInteractor {
         guard let gitURL = URL(string: urlString) else { return }
         AF.request(gitURL).validate().responseDecodable(of: Array<DentalDataPoint>.self) { (response) in
             guard let dentalDataPoints = response.value else { return }
-            DentalDataPointCache.shared.rawDataCache[page] = (dentalDataPoints)
-            completionHandler(dentalDataPoints)
+            let sortedDentalDataPoints = dentalDataPoints.sorted(by: { $0.time < $1.time })
+            DentalDataPointCache.shared.rawDataCache[page] = (sortedDentalDataPoints)
+            completionHandler(sortedDentalDataPoints)
         }
     }
 }

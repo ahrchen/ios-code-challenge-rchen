@@ -17,6 +17,36 @@ class ViewController: UIViewController {
 
     private let apiInteractor = APIInteractor()
 
+    private let lineChartView: LineChartView = {
+        let lineChartView = LineChartView()
+        lineChartView.accessibilityIdentifier = "Line Chart View"
+        lineChartView.rightAxis.enabled = false
+        lineChartView.xAxis.enabled = false
+        lineChartView.legend.enabled = false
+        return lineChartView
+    }()
+
+    private let loadingView: UIView = {
+        let view = UIView()
+        let label = UILabel()
+        label.text = "Loading..."
+        view.sv(label)
+        label.centerVertically().centerHorizontally()
+        view.isHidden = false
+        return view
+    }()
+
+    private let timeLabel: UILabel = {
+        let label = UILabel()
+        return label
+    }()
+
+    private let titleLabel: UILabel = {
+        let label = UILabel()
+        label.text = "Number of People Brushing Teeth Between"
+        return label
+    }()
+
     private let prevButton: UIButton = {
         let button = UIButton()
         button.setTitle("Previous", for: .normal)
@@ -37,21 +67,6 @@ class ViewController: UIViewController {
         return button
     }()
 
-    private let lineChartView: LineChartView = {
-        let lineChartView = LineChartView()
-        lineChartView.accessibilityIdentifier = "Line Chart View"
-        return lineChartView
-    }()
-
-    private let loadingView: UIView = {
-        let view = UIView()
-        let label = UILabel()
-        label.text = "Loading..."
-        view.sv(label)
-        label.centerVertically().centerHorizontally()
-        view.isHidden = false
-        return view
-    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -65,12 +80,18 @@ class ViewController: UIViewController {
     private func layoutView() {
         view.sv(lineChartView,
                 loadingView,
+                titleLabel,
+                timeLabel,
                 prevButton,
                 nextButton)
         lineChartView.left(0).right(0).top(0)
         lineChartView.Bottom == prevButton.Top
         loadingView.left(0).right(0).top(0)
-        loadingView.Bottom == prevButton.Top
+        loadingView.Bottom == titleLabel.Top - 20
+        titleLabel.centerHorizontally()
+        titleLabel.Bottom == timeLabel.Top - 5
+        timeLabel.centerHorizontally()
+        timeLabel.Bottom == prevButton.Top
         prevButton.bottom(0).left(0).height(100)
         nextButton.bottom(0).right(0).height(100)
         prevButton.Width == nextButton.Width
@@ -80,6 +101,11 @@ class ViewController: UIViewController {
     private func configureLineChartView(page: Int) {
         apiInteractor.fetchLineChartData(page: page) { dentalDataPoints in
             if let dentalDataPoints = dentalDataPoints {
+                if !dentalDataPoints.isEmpty {
+                    let startTime = self.populateTimeLabel(date: dentalDataPoints[0].time)
+                    let endTime = self.populateTimeLabel(date: dentalDataPoints[dentalDataPoints.count - 1].time)
+                    self.timeLabel.text = "\(startTime) -> \(endTime)"
+                }
                 self.populateLineChartView(page: page, dentalDataPoints: dentalDataPoints)
                 self.page = page
                 self.displayloadingView(false)
@@ -92,10 +118,9 @@ class ViewController: UIViewController {
             lineChartView.data = data
             return
         }
-        
-        var entries = [ChartDataEntry]()
-        let dentalDataPoints = dentalDataPoints.sorted(by: { $0.time < $1.time })
 
+
+        var entries = [ChartDataEntry]()
         for point in dentalDataPoints {
             let entry = ChartDataEntry(x: Double(point.time.timeIntervalSince1970),
                                        y: Double(point.numberOfPeopleBrushingTeeth))
@@ -110,8 +135,17 @@ class ViewController: UIViewController {
         lineChartView.data = data
     }
 
+    private func populateTimeLabel(date: Date) -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateStyle = DateFormatter.Style.short
+        dateFormatter.dateFormat = "MM-dd-yyyy HH:mm"
+        return dateFormatter.string(from: date)
+    }
+
     private func displayloadingView(_ isLoading: Bool) {
         loadingView.isHidden = !isLoading
+        timeLabel.isHidden = isLoading
+        titleLabel.isHidden = isLoading
         lineChartView.isHidden = isLoading
     }
 
