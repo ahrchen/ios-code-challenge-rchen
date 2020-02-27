@@ -13,6 +13,9 @@
 		EE919D3F2404B04E00176E32 /* DentalDataPoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE919D3E2404B04E00176E32 /* DentalDataPoints.swift */; };
 		EE919D412404B2A900176E32 /* 1.json in Resources */ = {isa = PBXBuildFile; fileRef = EE919D402404B2A900176E32 /* 1.json */; };
 		EE919D712405A88700176E32 /* LineChartDentalStatsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE919D702405A88700176E32 /* LineChartDentalStatsUITests.swift */; };
+		EEA691C424073ACA00CB72FA /* APIInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA691C324073ACA00CB72FA /* APIInteractor.swift */; };
+		EEA691C624073C4E00CB72FA /* DentalDataPointCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA691C524073C4E00CB72FA /* DentalDataPointCache.swift */; };
+		EEA691C824074FF400CB72FA /* APIInteractorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA691C724074FF400CB72FA /* APIInteractorTest.swift */; };
 		EECB49FC24038867007326E4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EECB49FB24038867007326E4 /* AppDelegate.swift */; };
 		EECB49FE24038867007326E4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EECB49FD24038867007326E4 /* SceneDelegate.swift */; };
 		EECB4A0024038867007326E4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EECB49FF24038867007326E4 /* ViewController.swift */; };
@@ -53,6 +56,9 @@
 		EE919D6E2405A88700176E32 /* LineChartDentalStatsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LineChartDentalStatsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE919D702405A88700176E32 /* LineChartDentalStatsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineChartDentalStatsUITests.swift; sourceTree = "<group>"; };
 		EE919D722405A88700176E32 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EEA691C324073ACA00CB72FA /* APIInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIInteractor.swift; sourceTree = "<group>"; };
+		EEA691C524073C4E00CB72FA /* DentalDataPointCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DentalDataPointCache.swift; sourceTree = "<group>"; };
+		EEA691C724074FF400CB72FA /* APIInteractorTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIInteractorTest.swift; sourceTree = "<group>"; };
 		EECB49F824038867007326E4 /* LineChartDentalStats.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LineChartDentalStats.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EECB49FB24038867007326E4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EECB49FD24038867007326E4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -137,8 +143,10 @@
 		EECB49FA24038867007326E4 /* LineChartDentalStats */ = {
 			isa = PBXGroup;
 			children = (
+				EEA691C324073ACA00CB72FA /* APIInteractor.swift */,
 				EECB4A0F240389B4007326E4 /* DentalDataPoint.swift */,
 				EE919D3E2404B04E00176E32 /* DentalDataPoints.swift */,
+				EEA691C524073C4E00CB72FA /* DentalDataPointCache.swift */,
 				EECB49FB24038867007326E4 /* AppDelegate.swift */,
 				EECB49FD24038867007326E4 /* SceneDelegate.swift */,
 				EECB49FF24038867007326E4 /* ViewController.swift */,
@@ -154,6 +162,7 @@
 			isa = PBXGroup;
 			children = (
 				EE919D402404B2A900176E32 /* 1.json */,
+				EEA691C724074FF400CB72FA /* APIInteractorTest.swift */,
 				EECB4A1124038FBC007326E4 /* DentalDataPointTests.swift */,
 				EE919D3C24049D9C00176E32 /* OHHTTPTest.swift */,
 				EECB4A1B24039026007326E4 /* Info.plist */,
@@ -398,8 +407,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				EECB4A10240389B4007326E4 /* DentalDataPoint.swift in Sources */,
+				EEA691C424073ACA00CB72FA /* APIInteractor.swift in Sources */,
 				EECB4A0024038867007326E4 /* ViewController.swift in Sources */,
 				EECB49FC24038867007326E4 /* AppDelegate.swift in Sources */,
+				EEA691C624073C4E00CB72FA /* DentalDataPointCache.swift in Sources */,
 				EE919D3F2404B04E00176E32 /* DentalDataPoints.swift in Sources */,
 				EECB49FE24038867007326E4 /* SceneDelegate.swift in Sources */,
 			);
@@ -409,6 +420,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EEA691C824074FF400CB72FA /* APIInteractorTest.swift in Sources */,
 				EE919D3D24049D9C00176E32 /* OHHTTPTest.swift in Sources */,
 				EECB4A2124039036007326E4 /* DentalDataPointTests.swift in Sources */,
 			);

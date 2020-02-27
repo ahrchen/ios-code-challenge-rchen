@@ -15,6 +15,8 @@ class ViewController: UIViewController {
 
     private var page: Int = 1
 
+    private let apiInteractor = APIInteractor()
+
     private let prevButton: UIButton = {
         let button = UIButton()
         button.setTitle("Previous", for: .normal)
@@ -47,7 +49,7 @@ class ViewController: UIViewController {
         label.text = "Loading..."
         view.sv(label)
         label.centerVertically().centerHorizontally()
-        view.isHidden = true
+        view.isHidden = false
         return view
     }()
 
@@ -76,26 +78,36 @@ class ViewController: UIViewController {
     }
 
     private func configureLineChartView(page: Int) {
-        let urlString = "https://raw.githubusercontent.com/rune-labs/ios-code-challenge-rchen/master/api/\(page).json"
-        guard let gitURL = URL(string: urlString) else { return }
-        AF.request(gitURL).validate().responseDecodable(of: Array<DentalDataPoint>.self) { (response) in
-            guard let dentalDataPoints = response.value else { self.displayloadingView(false); return }
-            var entries = [ChartDataEntry]()
-
-            for point in dentalDataPoints {
-                let entry = ChartDataEntry(x: Double(point.time.timeIntervalSince1970),
-                                           y: Double(point.numberOfPeopleBrushingTeeth))
-                entries.append(entry)
+        apiInteractor.fetchLineChartData(page: page) { dentalDataPoints in
+            if let dentalDataPoints = dentalDataPoints {
+                self.populateLineChartView(page: page, dentalDataPoints: dentalDataPoints)
+                self.page = page
+                self.displayloadingView(false)
             }
-
-            let line = LineChartDataSet(entries: entries)
-            line.colors = [NSUIColor.blue]
-            let data = LineChartData()
-            data.addDataSet(line)
-            self.lineChartView.data = data
-            self.page = page
-            self.displayloadingView(false)
         }
+    }
+
+    private func populateLineChartView(page: Int, dentalDataPoints: Array<DentalDataPoint>) {
+        if let data = DentalDataPointCache.shared.processedDataCache[page] {
+            lineChartView.data = data
+            return
+        }
+        
+        var entries = [ChartDataEntry]()
+        let dentalDataPoints = dentalDataPoints.sorted(by: { $0.time < $1.time })
+
+        for point in dentalDataPoints {
+            let entry = ChartDataEntry(x: Double(point.time.timeIntervalSince1970),
+                                       y: Double(point.numberOfPeopleBrushingTeeth))
+            entries.append(entry)
+        }
+
+        let line = LineChartDataSet(entries: entries)
+        line.colors = [NSUIColor.blue]
+        let data = LineChartData()
+        data.addDataSet(line)
+        DentalDataPointCache.shared.processedDataCache[page] = data
+        lineChartView.data = data
     }
 
     private func displayloadingView(_ isLoading: Bool) {

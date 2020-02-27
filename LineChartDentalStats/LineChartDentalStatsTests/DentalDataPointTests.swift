@@ -24,6 +24,12 @@ class DentalDataPointTests: XCTestCase {
         XCTAssertEqual(DentalDataPoint(Date(timeIntervalSince1970: 1579294990), 1), result)
     }
 
+    func testManualInputDentalDataPoint() {
+        let dentalDataPoint = DentalDataPoint(Date(timeIntervalSince1970: 1579294990), 1)
+        XCTAssertEqual(dentalDataPoint.numberOfPeopleBrushingTeeth, 1)
+        XCTAssertEqual(dentalDataPoint.time, Date(timeIntervalSince1970: 1579294990))
+    }
+
     private let fixture = Data("""
     {
         "t": 1579294990,
