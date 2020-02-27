@@ -21,14 +21,18 @@ class LineChartDentalStatsUITests: XCTestCase {
         let app = XCUIApplication()
         app.launchArguments = ["enable-testing"]
         app.launch()
-        let isDisplayingDentalStats = app.otherElements["Dental Statistics"].firstMatch.exists
+        let isDentalStatsDisplaying = app.otherElements["Dental Statistics"].firstMatch.exists
         let isChartViewDisplaying = app.otherElements["Line Chart View"].firstMatch.exists
         let isPreviousButtonDisplaying = app.buttons["Previous Button"].firstMatch.exists
         let isNextButtonDisplaying = app.buttons["Next Button"].firstMatch.exists
-        XCTAssert(isDisplayingDentalStats)
+        let isTitleLabelDisplaying = app.staticTexts["Title Label"].firstMatch.exists
+        let isTimeLabelDisplaying = app.staticTexts["Time Label"].firstMatch.exists
+        XCTAssert(isDentalStatsDisplaying)
         XCTAssert(isChartViewDisplaying)
         XCTAssert(isPreviousButtonDisplaying)
         XCTAssert(isNextButtonDisplaying)
+        XCTAssert(isTitleLabelDisplaying)
+        XCTAssert(isTimeLabelDisplaying)
         app.terminate()
     }
 

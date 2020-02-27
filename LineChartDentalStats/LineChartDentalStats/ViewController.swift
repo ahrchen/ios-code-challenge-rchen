@@ -38,12 +38,14 @@ class ViewController: UIViewController {
 
     private let timeLabel: UILabel = {
         let label = UILabel()
+        label.accessibilityLabel = "Time Label"
         return label
     }()
 
     private let titleLabel: UILabel = {
         let label = UILabel()
         label.text = "Number of People Brushing Teeth Between"
+        label.accessibilityLabel = "Title Label"
         return label
     }()
 
